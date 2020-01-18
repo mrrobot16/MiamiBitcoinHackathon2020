@@ -7,14 +7,22 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from 'modules/counter'
-// import { AssignEntity, CreateEntity, CategorizeTx, ReportSpam, TransactionsTable } from 'components'
+} from 'redux/counter'
+import { 
+  SearchAddressInput,
+  AddressInfo,
+  AddressDetails,
+  TransactionsTable,
+} from 'components'
 
 class Address extends React.Component {
   render(){
     return (
       <div>
-        Hello Adress
+        <SearchAddressInput />
+        <AddressInfo />
+        <AddressDetails />
+        <TransactionsTable />
       </div>
     )
   }
