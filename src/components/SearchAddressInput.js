@@ -12,9 +12,7 @@ import {
 class SearchAddressInput extends React.Component {
   render(){
     return (
-      <div>
-        Hello SearchAddressInput
-      </div>
+      <input type="text" />
     )
   }
 }

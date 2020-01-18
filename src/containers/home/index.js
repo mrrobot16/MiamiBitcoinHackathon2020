@@ -8,12 +8,12 @@ import {
   decrement,
   decrementAsync
 } from 'modules/counter'
-import { SearchAddressInput } from 'components'
+import { SearchAddressInput, IconComponent } from 'components'
 class Home extends React.Component {
   render(){
     return(
       <div>
-        Hello Home 
+        <IconComponent />
         <SearchAddressInput />
       </div>
     )
