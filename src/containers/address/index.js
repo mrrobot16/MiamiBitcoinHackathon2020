@@ -9,11 +9,11 @@ import {
   decrementAsync
 } from 'modules/counter'
 
-class Home extends React.Component {
-  render() {
+class Address extends React.Component {
+  render(){
     return (
       <div>
-        Hello Home 
+        Hello Adress
       </div>
     )
   }
@@ -40,4 +40,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home)
+)(Address)
