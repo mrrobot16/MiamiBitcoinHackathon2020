@@ -7,7 +7,7 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from 'modules/counter'
+} from 'redux/counter'
 import { SearchAddressInput, IconComponent } from 'components'
 class Home extends React.Component {
   render(){

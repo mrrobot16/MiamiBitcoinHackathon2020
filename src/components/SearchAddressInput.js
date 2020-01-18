@@ -7,7 +7,7 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from 'modules/counter'
+} from 'redux/counter'
 
 class SearchAddressInput extends React.Component {
   state = {
