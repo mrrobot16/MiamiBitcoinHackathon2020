@@ -10,9 +10,26 @@ import {
 } from 'modules/counter'
 
 class SearchAddressInput extends React.Component {
+  state = {
+    address: null
+  }
+  onAddressEnter(key){
+    if(key === 'Enter') { 
+      const address = this.state.address
+      this.props.push(address)
+    }
+  }
+  onAddressInputChange(value){
+    this.setState({ address: value })
+  }
   render(){
+    const onChange = (event) => this.onAddressInputChange(event.target.value)
+    const onKeyEnter = (event) => this.onAddressEnter(event.key)
     return (
-      <input type="text" />
+      <input 
+        type="text" 
+        onChange={onChange}
+        onKeyDown={onKeyEnter}/>
     )
   }
 }
@@ -30,7 +47,7 @@ const mapDispatchToProps = dispatch =>
       incrementAsync,
       decrement,
       decrementAsync,
-      changePage: () => push('/about-us')
+      push: (address) => push(`/address/${address}`)
     },
     dispatch
   )
