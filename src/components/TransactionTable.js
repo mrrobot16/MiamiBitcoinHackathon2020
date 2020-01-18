@@ -8,13 +8,12 @@ import {
   decrement,
   decrementAsync
 } from 'modules/counter'
-// import { AssignEntity, CreateEntity, CategorizeTx, ReportSpam } from 'components'
 
-class Address extends React.Component {
+class TransactionTable extends React.Component {
   render(){
     return (
       <div>
-        Hello Adress
+        Hello TransactionTable
       </div>
     )
   }
@@ -41,4 +40,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Address)
+)(TransactionTable)
