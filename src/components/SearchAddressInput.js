@@ -8,13 +8,12 @@ import {
   decrement,
   decrementAsync
 } from 'modules/counter'
-import { SearchAddressInput } from 'components'
-class Home extends React.Component {
+
+class SearchAddressInput extends React.Component {
   render(){
-    return(
+    return (
       <div>
-        Hello Home 
-        <SearchAddressInput />
+        Hello SearchAddressInput
       </div>
     )
   }
@@ -41,4 +40,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home)
+)(SearchAddressInput)

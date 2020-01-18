@@ -9,7 +9,7 @@ import {
   decrementAsync
 } from 'modules/counter'
 
-class TransactionTable extends React.Component {
+class TransactionsTable extends React.Component {
   render(){
     return (
       <div>
@@ -40,4 +40,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TransactionTable)
+)(TransactionsTable)

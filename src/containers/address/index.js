@@ -8,7 +8,7 @@ import {
   decrement,
   decrementAsync
 } from 'modules/counter'
-// import { AssignEntity, CreateEntity, CategorizeTx, ReportSpam } from 'components'
+// import { AssignEntity, CreateEntity, CategorizeTx, ReportSpam, TransactionsTable } from 'components'
 
 class Address extends React.Component {
   render(){
