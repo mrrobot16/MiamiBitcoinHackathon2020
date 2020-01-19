@@ -10,11 +10,12 @@ import {
 } from 'redux/counter'
 
 class CreateEntity extends React.Component {
+  addEntity() {
+    
+  }
   render() {
     return (
-      <div>
-        Hello CreateEntity
-      </div>
+      <button onClick={ () => this.addEntity() }>Add Entity</button>
     )
   }
 }
