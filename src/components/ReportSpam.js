@@ -7,10 +7,10 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from 'modules/counter'
+} from 'redux/counter'
 
 class ReportSpam extends React.Component {
-  render(){
+  render() {
     return (
       <div>
         Hello ReportSpam

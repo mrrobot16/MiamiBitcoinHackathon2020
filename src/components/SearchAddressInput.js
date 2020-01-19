@@ -7,22 +7,22 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from 'modules/counter'
+} from 'redux/counter'
 
 class SearchAddressInput extends React.Component {
   state = {
     address: null
   }
-  onAddressEnter(key){
+  onAddressEnter(key) {
     if(key === 'Enter') { 
       const address = this.state.address
       this.props.push(address)
     }
   }
-  onAddressInputChange(value){
+  onAddressInputChange(value) {
     this.setState({ address: value })
   }
-  render(){
+  render() {
     const onChange = (event) => this.onAddressInputChange(event.target.value)
     const onKeyEnter = (event) => this.onAddressEnter(event.key)
     return (

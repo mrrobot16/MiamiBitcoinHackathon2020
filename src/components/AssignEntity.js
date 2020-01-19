@@ -7,10 +7,10 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from 'modules/counter'
+} from 'redux/counter'
 
 class AssignEntity extends React.Component {
-  render(){
+  render() {
     return (
       <div>
         Hello AssignEntity

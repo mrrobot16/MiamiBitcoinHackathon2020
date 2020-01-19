@@ -5,6 +5,8 @@ import ReportSpam from './ReportSpam'
 import TransactionsTable from './TransactionsTable'
 import SearchAddressInput from './SearchAddressInput'
 import IconComponent from './IconComponent'
+import AddressDetails from './AddressDetails'
+import AddressInfo from './AddressInfo'
 
 export { 
   AssignEntity, 
@@ -13,5 +15,7 @@ export {
   ReportSpam, 
   TransactionsTable, 
   SearchAddressInput, 
-  IconComponent 
+  IconComponent,
+  AddressDetails,
+  AddressInfo
 }
