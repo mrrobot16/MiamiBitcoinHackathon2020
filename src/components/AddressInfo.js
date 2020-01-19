@@ -11,12 +11,12 @@ import { ADDRESS_INFO } from 'constants/data'
 
 class AddressInfoComponent extends React.Component {
   render() {
-    const { addressInfo } = this.props
+    const { addressInfo, address } = this.props
     return (
      <div className="row align-items-center py-4">
        <div className="col-10">
          <h3 className="font-weight-bolder m-0">
-           { addressInfo.currency } / <span className="text-danger">{ addressInfo.address }</span>
+           { addressInfo.currency } / <span className="text-danger">{ address }</span>
          </h3>
        </div>
        <div className="col-2 h-100">

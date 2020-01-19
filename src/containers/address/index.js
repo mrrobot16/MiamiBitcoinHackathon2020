@@ -28,11 +28,12 @@ class Address extends React.Component {
     this.getAddress()
   }
   render(){
+    const address = this.props.match.params.address;
     return (
       <div className="container">
         <SearchAddressInput />
         <div className="col">
-          <AddressInfo/>
+          <AddressInfo address={address}/>
           <AddressDetails />
           <div className="my-4">
             <h4>Transactions</h4>
