@@ -37,7 +37,7 @@ class SearchAddressInput extends React.Component {
     const onChange = (event) => this.onAddressInputChange(event.target.value)
     const onKeyEnter = (event) => this.onAddressEnter(event.key)
     return (
-      <div className="input-group mb-3">
+      <div className="input-group">
         <div className="input-group-prepend">
           <span style={styleBefore} className="input-group-text bg-white">
             <Octicon icon={Search}/>
@@ -45,7 +45,7 @@ class SearchAddressInput extends React.Component {
         </div>
         <input
           style={styleInput}
-          className='w-100 form-control form-control-lg border-left-0 pl-0'
+          className='w-100 form-control border-left-0 pl-0'
           placeholder="Search BTC Address"
           type="text"
           onChange={onChange}
