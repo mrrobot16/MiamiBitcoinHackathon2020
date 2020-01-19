@@ -7,10 +7,10 @@ import {
   decrement,
   decrementAsync
 } from 'redux/counter'
-
+import { ADDRESS_INFO } from 'constants/data'
 
 class AddressInfoComponent extends React.Component {
-  render(){
+  render() {
     const { addressInfo } = this.props
     return (
       <p>
@@ -18,11 +18,6 @@ class AddressInfoComponent extends React.Component {
       </p>
     )
   }
-}
-
-const ADDRESS_INFO = {
-  currency: 'BTC', 
-  address: '1Hz96kJKF2HLPGY15JWLB5m9qGNxvt8tHJ'
 }
 
 const mapStateToProps = ({ counter }) => ({
