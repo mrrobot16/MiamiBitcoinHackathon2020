@@ -7,14 +7,15 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from 'redux/counter'
+}                    from 'redux/counter'
 import {
   SearchAddressInput,
   AddressInfo,
   AddressDetails,
   TransactionsTable,
-} from 'components'
-import { get } from 'utils/http'
+  IconComponent
+}                    from 'components'
+import { get }       from 'utils/http'
 import { endpoints } from 'constants/endpoints'
 
 class Address extends React.Component {
@@ -46,8 +47,13 @@ class Address extends React.Component {
     }
     return (
       <div className="container">
-        <SearchAddressInput />
         <div className="col">
+          <div className="py-4 d-flex flex-row justify-content-between align-items-center">
+            <div className="mr-3">
+              <IconComponent />
+            </div> 
+            <SearchAddressInput />
+          </div>
           <AddressInfo address={this.address}/>
           <AddressDetails addressDetails={addressDetails}/>
           <div className="my-4">

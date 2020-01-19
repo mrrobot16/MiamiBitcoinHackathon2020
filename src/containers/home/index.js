@@ -16,7 +16,7 @@ class Home extends React.Component {
         <div className="row justify-content-center vh-100">
           <div className="col col-lg-8">
             <div className="d-flex flex-column align-items-center justify-content-center" style={ { "height": '80%' } }>
-              <IconComponent />
+              <IconComponent style={ { width: "25%" }} />
               <SearchAddressInput />
             </div>
           </div>
