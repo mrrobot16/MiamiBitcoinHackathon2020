@@ -6,7 +6,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './redux/store'
 import App from 'containers/app'
 
-import './index.css'
+import 'assets/app.scss'
 
 const target = document.querySelector('#root')
 const ProviderApp = () => (

@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+@import "~bootstrap/scss/functions", "variables", "~bootstrap/scss/bootstrap";
+
+button:disabled {
+  opacity: 0.5;
+}

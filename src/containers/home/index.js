@@ -12,9 +12,15 @@ import { SearchAddressInput, IconComponent } from 'components'
 class Home extends React.Component {
   render(){
     return(
-      <div>
-        <IconComponent />
-        <SearchAddressInput />
+      <div className={ 'container' }>
+        <div className="row justify-content-center vh-100">
+          <div className="col col-lg-8">
+            <div className="d-flex flex-column align-items-center justify-content-center" style={ { "height": '80%' } }>
+              <IconComponent />
+              <SearchAddressInput />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

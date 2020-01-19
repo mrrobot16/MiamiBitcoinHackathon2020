@@ -14,7 +14,7 @@ class SearchAddressInput extends React.Component {
     address: null
   }
   onAddressEnter(key) {
-    if(key === 'Enter') { 
+    if(key === 'Enter') {
       const address = this.state.address
       this.props.push(address)
     }
@@ -22,14 +22,30 @@ class SearchAddressInput extends React.Component {
   onAddressInputChange(value) {
     this.setState({ address: value })
   }
+
   render() {
+    let styleInput = {
+      'border-top-right-radius': '10rem',
+      'border-bottom-right-radius': '10rem',
+    }
+    let styleBefore = {
+      'border-top-left-radius': '10rem',
+      'border-bottom-left-radius': '10rem',
+    }
     const onChange = (event) => this.onAddressInputChange(event.target.value)
     const onKeyEnter = (event) => this.onAddressEnter(event.key)
     return (
-      <input 
-        type="text" 
-        onChange={onChange}
-        onKeyDown={onKeyEnter}/>
+      <div className="input-group mb-3">
+        <div className="input-group-prepend">
+          <span style={styleBefore} className="input-group-text" id="basic-addon1">BTC</span>
+        </div>
+        <input
+          style={styleInput}
+          className='w-100 form-control form-control-lg'
+          type="text"
+          onChange={onChange}
+          onKeyDown={onKeyEnter}/>
+      </div>
     )
   }
 }
