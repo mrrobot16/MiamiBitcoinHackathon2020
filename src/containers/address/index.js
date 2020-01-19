@@ -14,9 +14,11 @@ import {
   AddressDetails,
   TransactionsTable,
 } from 'components'
+import { get } from 'utils/http'
 
 class Address extends React.Component {
   render(){
+    console.log('get', get);
     return (
       <div>
         <SearchAddressInput />

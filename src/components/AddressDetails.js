@@ -8,27 +8,24 @@ import {
   decrement,
   decrementAsync
 } from 'redux/counter'
-
+import { ADDRESS_DETAILS } from 'constants/data'
 
 class AddressDetailsComponent extends React.Component {
+  addEntity() {
+    
+  }
   render() {
     const { owner, balance, sent, received } = this.props.addressDetails
     return (
       <div>
         <p>Owner: { owner ? owner : 'Unknown' }</p>
+        { !owner ? (<button onClick={ () => this.addEntity() }>Add Entity</button>) : '' }
         <p>Balance: { balance }</p>
         <p>Sent: { sent }</p>
         <p>Received: { received }</p>
       </div>
     )
   }
-}
-
-const ADDRESS_DETAILS = {
-  owner: 'Alphabet Inc', 
-  balance: 63.58909002, 
-  sent: '63.58909002', 
-  received: '63.58909002',
 }
 
 const mapStateToProps = ({ counter }) => ({

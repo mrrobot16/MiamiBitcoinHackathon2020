@@ -10,7 +10,7 @@ import {
 } from 'redux/counter'
 
 class CategorizeTx extends React.Component {
-  render(){
+  render() {
     return (
       <div>
         Hello CategorizeTx
