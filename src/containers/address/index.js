@@ -19,26 +19,41 @@ import { endpoints } from 'constants/endpoints'
 
 class Address extends React.Component {
   id  = this.props.match.params.id
-
-  getAddress() {
-    get(`${endpoints.address}/${this.id}`)
+  address = this.props.match.params.address;
+  state = {
+    addressData: {}
+  }
+  async getAddress() {
+    const addressData = await get(`${endpoints.address}/${this.address}`);
+    const { data } = await addressData
+    this.setState({
+      addressData: data
+    });
   }
 
   componentDidMount(){
     this.getAddress()
   }
   render(){
-    const address = this.props.match.params.address;
+    const { total_received, total_sent, balance, txs } = this.state.addressData
+    console.log(this.state);
+    console.log('txs', txs);
+    const addressDetails = {
+      owner: '', 
+      balance, 
+      sent: total_sent, 
+      received: total_received
+    }
     return (
       <div className="container">
         <SearchAddressInput />
         <div className="col">
-          <AddressInfo address={address}/>
-          <AddressDetails />
+          <AddressInfo address={this.address}/>
+          <AddressDetails addressDetails={addressDetails}/>
           <div className="my-4">
             <h4>Transactions</h4>
           </div>
-          <TransactionsTable />
+          <TransactionsTable transactions={txs}/>
         </div>
       </div>
     )

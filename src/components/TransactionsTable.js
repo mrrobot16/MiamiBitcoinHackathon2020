@@ -14,6 +14,8 @@ import { truncate }           from 'lodash/string'
 class TransactionsTableComponent extends React.Component {
   render(){
     const { transactions } = this.props
+    console.log('this.props', this.props);
+    console.log('transactions', transactions);
     return (
       <table className="table table-dark table-borderless table-striped table-responsive bg-dark">
         <thead>
@@ -27,24 +29,25 @@ class TransactionsTableComponent extends React.Component {
         </thead>
         <tbody>
           {
-            transactions.map(tx => {
+            transactions ? transactions.map(tx => {
+              const txDate = new Date(tx.confirmed).toLocaleDateString()
               const Tx = (
                 <tr key={tx.hash}>
-                  <td>{tx.date}</td>
+                  <td>{ txDate }</td>
                   <td width="30%">
                     <span className="text-truncate col-2">
                       { truncate(tx.hash, { length: 24}) }
                     </span>
                   </td>
-                  <td>{tx.from}</td>
+                  <td>{truncate(tx.addresses[0], { length: 15})}</td>
                   <td>
-                    <strong>{tx.to}</strong>
+                    <strong>{truncate(tx.outputs[0].addresses[0], { length: 15 })}</strong>
                   </td>
-                  <td>{tx.value}</td>
+                  <td>{tx.total}</td>
                 </tr>
               )
               return Tx
-            })
+          }) : null
           }
         </tbody>
 
@@ -95,7 +98,7 @@ const mapStateToProps = ({ counter }) => ({
   count: counter.count,
   isIncrementing: counter.isIncrementing,
   isDecrementing: counter.isDecrementing,
-  transactions: TRANSACTIONS,
+  // transactions: TRANSACTIONS,
 })
 
 const bindedActions = {

@@ -1,9 +1,7 @@
+import axios from 'axios'
 export const get = async (url) => {
-  const logData = data => {
-    console.log('data', data);
-  }
-  const data = await fetch(url)
-  logData(data)
+  const data = await axios.get(url)
+  return data
 }
 
 export const post = async (url, data) => {
