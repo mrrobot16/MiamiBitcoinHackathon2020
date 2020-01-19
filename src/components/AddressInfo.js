@@ -13,9 +13,16 @@ class AddressInfoComponent extends React.Component {
   render() {
     const { addressInfo } = this.props
     return (
-      <p>
-        { addressInfo.currency } / { addressInfo.address }
-      </p>
+     <div className="row align-items-center py-4">
+       <div className="col-10">
+         <h3 className="font-weight-bolder m-0">
+           { addressInfo.currency } / <span className="text-danger">{ addressInfo.address }</span>
+         </h3>
+       </div>
+       <div className="col-2 h-100">
+         <button className="btn btn-outline-danger float-right">Report Scam</button>
+       </div>
+     </div>
     )
   }
 }

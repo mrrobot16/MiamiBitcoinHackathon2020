@@ -5,10 +5,10 @@ import Address from 'containers/address'
 
 const App = () => (
   <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/address/1234">Address</Link>
-    </header>
+    {/*<header>*/}
+    {/*  <Link to="/">Home</Link>*/}
+    {/*  <Link to="/address/1234">Address</Link>*/}
+    {/*</header>*/}
 
     <main>
       <Route exact path="/" component={Home} />

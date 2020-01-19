@@ -9,6 +9,8 @@ import {
   decrementAsync
 } from 'redux/counter'
 
+import Octicon, {Search} from '@primer/octicons-react'
+
 class SearchAddressInput extends React.Component {
   state = {
     address: null
@@ -25,23 +27,26 @@ class SearchAddressInput extends React.Component {
 
   render() {
     let styleInput = {
-      'border-top-right-radius': '10rem',
-      'border-bottom-right-radius': '10rem',
+      borderTopRightRadius: '10rem',
+      borderBottomRightRadius: '10rem',
     }
     let styleBefore = {
-      'border-top-left-radius': '10rem',
-      'border-bottom-left-radius': '10rem',
+      borderTopLeftRadius: '10rem',
+      borderBottomLeftRadius: '10rem',
     }
     const onChange = (event) => this.onAddressInputChange(event.target.value)
     const onKeyEnter = (event) => this.onAddressEnter(event.key)
     return (
       <div className="input-group mb-3">
         <div className="input-group-prepend">
-          <span style={styleBefore} className="input-group-text" id="basic-addon1">BTC</span>
+          <span style={styleBefore} className="input-group-text bg-white">
+            <Octicon icon={Search}/>
+          </span>
         </div>
         <input
           style={styleInput}
-          className='w-100 form-control form-control-lg'
+          className='w-100 form-control form-control-lg border-left-0 pl-0'
+          placeholder="Search BTC Address"
           type="text"
           onChange={onChange}
           onKeyDown={onKeyEnter}/>

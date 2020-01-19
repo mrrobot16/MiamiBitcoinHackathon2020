@@ -8,7 +8,7 @@ import {
   decrement,
   decrementAsync
 } from 'redux/counter'
-import { 
+import {
   SearchAddressInput,
   AddressInfo,
   AddressDetails,
@@ -18,21 +18,27 @@ import { get } from 'utils/http'
 import { endpoints } from 'constants/endpoints'
 
 class Address extends React.Component {
-  
+  id  = this.props.match.params.id
+
   getAddress() {
-    get(endpoints.address + '/18hmroHs5QgLGzrY93ctQmyChEUQBiut8X')
+    get(`${endpoints.address}/${this.id}`)
   }
-  
+
   componentDidMount(){
     this.getAddress()
   }
   render(){
     return (
-      <div>
+      <div className="container">
         <SearchAddressInput />
-        <AddressInfo />
-        <AddressDetails />
-        <TransactionsTable />
+        <div className="col">
+          <AddressInfo/>
+          <AddressDetails />
+          <div className="my-4">
+            <h4>Transactions</h4>
+          </div>
+          <TransactionsTable />
+        </div>
       </div>
     )
   }

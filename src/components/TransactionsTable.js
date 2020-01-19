@@ -1,20 +1,21 @@
-import React from 'react'
-import { push } from 'connected-react-router'
+import React                  from 'react'
+import { push }               from 'connected-react-router'
 import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { connect }            from 'react-redux'
 import {
   increment,
   incrementAsync,
   decrement,
   decrementAsync
-} from 'redux/counter'
-import { TRANSACTIONS } from 'constants/data';
+}                             from 'redux/counter'
+import { TRANSACTIONS }       from 'constants/data';
+import { truncate }           from 'lodash/string'
 
 class TransactionsTableComponent extends React.Component {
   render(){
     const { transactions } = this.props
     return (
-      <table>
+      <table className="table table-dark table-borderless table-striped table-responsive bg-dark">
         <thead>
           <tr>
             <th>Date</th>
@@ -25,13 +26,15 @@ class TransactionsTableComponent extends React.Component {
           </tr>
         </thead>
         <tbody>
-          { 
+          {
             transactions.map(tx => {
               const Tx = (
                 <tr key={tx.hash}>
                   <td>{tx.date}</td>
-                  <td>
-                    <strong>{tx.hash}</strong>
+                  <td width="30%">
+                    <span className="text-truncate col-2">
+                      { truncate(tx.hash, { length: 24}) }
+                    </span>
                   </td>
                   <td>{tx.from}</td>
                   <td>
@@ -44,7 +47,7 @@ class TransactionsTableComponent extends React.Component {
             })
           }
         </tbody>
-        
+
       </table>
     )
   }
