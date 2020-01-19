@@ -15,10 +15,18 @@ import {
   TransactionsTable,
 } from 'components'
 import { get } from 'utils/http'
+import { endpoints } from 'constants/endpoints'
 
 class Address extends React.Component {
+  
+  getAddress() {
+    get(endpoints.address + '/18hmroHs5QgLGzrY93ctQmyChEUQBiut8X')
+  }
+  
+  componentDidMount(){
+    this.getAddress()
+  }
   render(){
-    console.log('get', get);
     return (
       <div>
         <SearchAddressInput />

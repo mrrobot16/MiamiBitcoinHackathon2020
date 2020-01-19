@@ -30,9 +30,13 @@ class TransactionsTableComponent extends React.Component {
               const Tx = (
                 <tr key={tx.hash}>
                   <td>{tx.date}</td>
-                  <td>{tx.hash}</td>
+                  <td>
+                    <strong>{tx.hash}</strong>
+                  </td>
                   <td>{tx.from}</td>
-                  <td>{tx.to}</td>
+                  <td>
+                    <strong>{tx.to}</strong>
+                  </td>
                   <td>{tx.value}</td>
                 </tr>
               )
